@@ -1,0 +1,4 @@
+aiohttp
+telethon
+telethon-tgcrypto
+python-dotenv==0.18.0
