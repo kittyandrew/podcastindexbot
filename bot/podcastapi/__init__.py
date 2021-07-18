@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import aiohttp
 import asyncio
 import hashlib
+import logging
 import time
 import os
 
@@ -41,6 +42,7 @@ class PodcastAPI:
                 return await r.json()
 
     async def search_feeds(self, query: str):
+        logging.info("Query: %s", query)
         return await self.get(f"{self.URL}/search/byterm?q={query}")
 
     async def get_podcast(self, feed_id: int):
